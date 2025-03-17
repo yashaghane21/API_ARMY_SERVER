@@ -25,7 +25,10 @@ mongoose.connect(process.env.MONGOURL, {
     .catch((err) => {
         console.log(err);
     });
-
+    app.get('/', (req, res) => {
+        res.send('Welcome to the API!');
+      });
+      
 app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {
